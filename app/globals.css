@@ -4,7 +4,7 @@
 @theme {
   --color-background:
     radial-gradient(
-      900px 800px at 95% 5%,
+      900px 800px at 95% 15%,
       rgba(248, 165, 10, 0.05),
       transparent 30%
     ),
