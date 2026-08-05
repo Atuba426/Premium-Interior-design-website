@@ -29,6 +29,7 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1400&auto=format&fit=crop",
   },
+  /*
   {
     id: "scandinavian-1bhk-andheri",
     title: "Scandinavian 1BHK — Andheri East",
@@ -58,5 +59,5 @@ export const projects = [
       "A duplex reworked around a double-height living area, with a floating staircase as the home's centrepiece.",
     image:
       "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1400&auto=format&fit=crop",
-  },
+  }, */
 ];

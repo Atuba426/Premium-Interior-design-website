@@ -15,24 +15,36 @@ export default function ExploreDesigns() {
         />
 
         <div className="mt-16 flex flex-col gap-14">
+          {/* Home Types */}
           <div>
             <h3 className="mb-6 text-[15px] font-semibold uppercase tracking-[0.14em] text-text-secondary">
               Home Types
             </h3>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {homeTypes.map((item, i) => (
-                <DesignCard key={item.id} item={item} index={i} />
+                <div
+                  key={item.id}
+                  className="first:col-span-2 sm:first:col-span-1"
+                >
+                  <DesignCard item={item} index={i} />
+                </div>
               ))}
             </div>
           </div>
 
+          {/* Design Styles */}
           <div>
             <h3 className="mb-6 text-[15px] font-semibold uppercase tracking-[0.14em] text-text-secondary">
               Design Styles
             </h3>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {designStyles.map((item, i) => (
-                <DesignCard key={item.id} item={item} index={i} />
+                <div
+                  key={item.id}
+                  className="first:col-span-2 sm:first:col-span-1"
+                >
+                  <DesignCard item={item} index={i} />
+                </div>
               ))}
             </div>
           </div>
