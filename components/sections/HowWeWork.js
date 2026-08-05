@@ -7,7 +7,7 @@ import { workSteps } from "@/data/services";
 
 export default function HowWeWork() {
   return (
-    <section id="how-we-work" className="bg-white py-24 lg:py-32">
+    <section id="how-we-work" className="bg-white py-14 lg:py-22">
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading

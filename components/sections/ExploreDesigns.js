@@ -5,7 +5,7 @@ import { homeTypes, designStyles } from "@/data/explore";
 
 export default function ExploreDesigns() {
   return (
-    <section id="explore" className="bg-white py-24 lg:py-32">
+    <section id="explore" className="bg-white py-24 lg:py-12">
       <Container>
         <SectionHeading
           eyebrow="Browse By"
@@ -14,7 +14,7 @@ export default function ExploreDesigns() {
           align="center"
         />
 
-        <div className="mt-16 flex flex-col gap-14">
+        <div className="mt-10 flex flex-col gap-14">
           {/* Home Types */}
           <div>
             <h3 className="mb-6 text-[15px] font-semibold uppercase tracking-[0.14em] text-text-secondary">

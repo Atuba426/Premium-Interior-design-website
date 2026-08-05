@@ -19,7 +19,7 @@ const stats = [
 
 export default function TrustNumbers() {
   return (
-    <section className="border-y border-border bg-white py-14">
+    <section className="border-y border-border bg-white py-10">
       <Container>
         <div className="grid grid-cols-2 gap-y-10 sm:grid-cols-4">
           {stats.map((stat, i) => (

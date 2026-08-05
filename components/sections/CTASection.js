@@ -8,7 +8,7 @@ import { STUDIO } from "@/lib/utils";
 
 export default function CTASection() {
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-accent">
+    <section id="contact" className="py-14 lg:py-12 bg-accent">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

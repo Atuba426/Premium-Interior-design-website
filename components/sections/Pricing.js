@@ -5,7 +5,7 @@ import { pricingPlans } from "@/data/pricing";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="bg-white py-24 lg:py-32">
+    <section id="pricing" className="bg-white py-14 lg:py-12">
       <Container>
         <SectionHeading
           eyebrow="Investment"

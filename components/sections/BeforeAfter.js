@@ -4,7 +4,7 @@ import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 export default function BeforeAfter() {
   return (
-    <section className="bg-white py-24 lg:py-32">
+    <section className="bg-white py-4 lg:py-10">
       <Container>
         <SectionHeading
           eyebrow="The Transformation"

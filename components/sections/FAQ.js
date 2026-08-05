@@ -6,7 +6,7 @@ import { faqs } from "@/data/faq";
 
 export default function FAQ() {
   return (
-    <section className="bg-[#FAF7F3] py-32">
+    <section className="bg-[#FAF7F3] py-12">
       <Container>
 
         <div className="mx-auto max-w-3xl text-center">

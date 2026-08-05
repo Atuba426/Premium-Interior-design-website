@@ -5,7 +5,7 @@ import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 lg:py-32">
+    <section id="testimonials" className="py-14 lg:py-12">
       <Container>
         <SectionHeading
           eyebrow="Client Stories"
@@ -14,7 +14,7 @@ export default function Testimonials() {
           align="center"
         />
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <TestimonialCard key={t.id} testimonial={t} index={i} />
           ))}

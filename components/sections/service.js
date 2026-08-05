@@ -46,7 +46,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="service" className="bg-[#faf7f3] py-32">
+    <section id="service" className="bg-[#faf7f3] py-12">
       <div className="container-max">
 
         <div className="mx-auto max-w-3xl text-center">
@@ -55,11 +55,11 @@ export default function Services() {
             Our Services
           </span>
 
-          <h2 className="mt-5 text-5xl">
+          <h2 className="mt-5 text-5xl">   
             Beautiful Interiors,
             <br />
             Designed Around Your Lifestyle.
-          </h2>
+          </h2>    
 
           <p className="mx-auto mt-6 max-w-2xl">
             From one room to complete home transformations,

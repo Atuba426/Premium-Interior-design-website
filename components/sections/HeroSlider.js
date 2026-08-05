@@ -5,52 +5,85 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
-      alt: "Warm living room with wooden accents and modern sofa"
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
-      alt: "Cozy modern interior with light wood tones and soft neutral furniture"
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-      alt: "Spacious house interior with minimalist wooden paneling and open lighting"
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop",
-      alt: "Contemporary living room featuring dark wooden furniture and modern lounge chair"
-    },
-    {
-      id: 5,
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-      alt: "Warm house living space with minimalist decor and wooden flooring"
-    }
-  ];
+  {
+    id: 1,
+    image:
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
+    alt: "Warm living room with wooden accents and modern sofa",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
+    alt: "Cozy modern interior with light wood tones and soft neutral furniture",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    alt: "Spacious house interior with minimalist wooden paneling and open lighting",
+  },
+  {
+    id: 4,
+    image:
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop",
+    alt: "Contemporary living room featuring dark wooden furniture and modern lounge chair",
+  },
+  {
+    id: 5,
+    image:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    alt: "Warm house living space with minimalist decor and wooden flooring",
+  },
+];
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  // Track direction: 1 = forward, -1 = backward
+  const [direction, setDirection] = useState(1);
 
   useEffect(() => {
     if (isPaused) return;
+
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => {
+        // Reverse to backward when reaching the last slide
+        if (prev === slides.length - 1 && direction === 1) {
+          setDirection(-1);
+          return prev - 1;
+        }
+        // Reverse to forward when reaching the first slide
+        if (prev === 0 && direction === -1) {
+          setDirection(1);
+          return prev + 1;
+        }
+        // Advance according to active direction
+        return prev + direction;
+      });
     }, 2000); // 2 seconds auto-advance
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, direction]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => {
+      if (prev === slides.length - 1) {
+        setDirection(-1);
+        return prev - 1;
+      }
+      return prev + 1;
+    });
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setCurrentSlide((prev) => {
+      if (prev === 0) {
+        setDirection(1);
+        return prev + 1;
+      }
+      return prev - 1;
+    });
   };
 
   return (
@@ -68,14 +101,13 @@ export default function HeroSlider() {
           <div key={slide.id} className="w-full h-full min-w-full shrink-0 relative">
             <Image
               src={slide.image}
-              alt="Almas School Campus"
+              alt={slide.alt}
               fill
               sizes="(max-width: 768px) 100vw, 638px"
               className="object-cover"
               priority={index === 0}
             />
             {/* Overlay */}
-           
           </div>
         ))}
       </div>

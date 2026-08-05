@@ -25,7 +25,7 @@ export default function TestimonialCard({ testimonial, index = 0 }) {
         "{testimonial.review}"
       </p>
 
-      <div className="flex items-center gap-3 border-t border-border pt-5">
+      <div className="flex items-center gap-3 border-t border-border pt-3">
         <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full">
           <Image
             src={testimonial.image}

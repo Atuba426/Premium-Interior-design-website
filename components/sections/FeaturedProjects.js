@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function FeaturedProjects() {
   return (
-    <section id="projects" className="py-24 lg:py-32">
+    <section id="projects" className="py-24 lg:py-12">
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
           <SectionHeading

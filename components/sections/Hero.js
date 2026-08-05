@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden pt-32 pb-20 lg:pt-44 lg:pb-28"
+      className="relative overflow-hidden pt-32 pb-5 lg:pt-28 lg:pb-18"
     >
       <div className="pointer-events-none absolute -top-40 right-0 h-130 w-130 rounded-full bg-accent/10 blur-3xl" />
 
@@ -50,7 +50,11 @@ export default function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="font-heading text-[44px] leading-[1.08] text-text-primary text-balance sm:text-[56px] lg:text-[72px]"
             >
               Design Spaces That Feel Like Home.
@@ -62,8 +66,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.35 }}
               className="max-w-md text-[18px] leading-relaxed text-text-secondary"
             >
-              We design and build full-home interiors across Mumbai — from
-              first sketch to final handover — with transparent pricing and a
+              We design and build full-home interiors across Mumbai — from first
+              sketch to final handover — with transparent pricing and a
               dedicated project manager at every step.
             </motion.p>
 
@@ -73,8 +77,11 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-wrap items-center gap-4 pt-1"
             >
-              <Button href="#contact"  className="px-5! py-2.5! text-[14.5px]! font-medium bg-[#de9b36] hover:bg-gray-950 text-stone-900 shadow-sm hover:text-white transition-all duration-300 rounded-full border-none"
-               icon={ArrowRight}>
+              <Button
+                href="#contact"
+                className="px-5! py-2.5! text-[14.5px]! font-medium bg-[#de9b36] hover:bg-gray-950 text-stone-900 shadow-sm hover:text-white transition-all duration-300 rounded-full border-none"
+                icon={ArrowRight}
+              >
                 Book Consultation
               </Button>
               <Button href="#projects" variant="secondary" icon={PlayCircle}>
@@ -100,7 +107,7 @@ export default function Hero() {
             className="grid grid-cols-1 sm:grid-cols-12 gap-4 h-145"
           >
             {/* Big Image Column */}
-           
+
             <div className="group relative sm:col-span-7 h-full overflow-hidden rounded-3xl shadow-sm">
               <Image
                 src={bentoImages[0].src}
@@ -118,8 +125,12 @@ export default function Hero() {
                   <Star className="w-4 h-4 fill-white" />
                 </div>
                 <div>
-                  <p className="font-bold text-sm text-text-primary">10+ Years</p>
-                  <p className="text-xs text-text-secondary">Designing Beautiful Homes</p>
+                  <p className="font-bold text-sm text-text-primary">
+                    10+ Years
+                  </p>
+                  <p className="text-xs text-text-secondary">
+                    Designing Beautiful Homes
+                  </p>
                 </div>
               </div>
             </div>
