@@ -1,14 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Button from "@/components/ui/Button";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import { NAV_LINKS } from "@/lib/utils";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -17,11 +21,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (href) => {
+  useEffect(() => {
     setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  }, [pathname]);
 
   return (
     <motion.header
@@ -37,36 +39,36 @@ export default function Navbar() {
             : "bg-transparent border border-transparent backdrop-blur-none shadow-none"
         }`}
       >
-        <a
+        <Link
           href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("#home");
-          }}
           className="font-heading text-[19px] font-semibold tracking-tight text-text"
         >
           Interio<span className="text-amber-500">.</span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
-                className="rounded-full px-4 py-2 text-[14.5px] font-medium text-text-primary/80 transition-colors hover:bg-black/5 hover:text-text-primary"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`rounded-full px-4 py-2 text-[14.5px] font-medium transition-colors hover:bg-black/5 ${
+                    active
+                      ? "text-amber-500 font-semibold"
+                      : "text-text-primary/80 hover:text-text-primary"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
-        {/* Desktop Golden Button */}
-        <div className="hidden lg:block">
+        {/* Desktop Actions */}
+        <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
           <Button
             href="#contact"
             className="px-5! py-2.5! text-[14.5px]! font-medium bg-[#de9b36] hover:bg-gray-950 text-stone-900 shadow-sm hover:text-white transition-all duration-300 rounded-full border-none"
@@ -75,13 +77,17 @@ export default function Navbar() {
           </Button>
         </div>
 
-        <button
-          className="flex h-9 w-9 items-center justify-center rounded-full text-text-primary lg:hidden"
-          onClick={() => setOpen((o) => !o)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Mobile Actions */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            className="flex h-9 w-9 items-center justify-center rounded-full text-text-primary"
+            onClick={() => setOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Drawer */}
@@ -97,16 +103,12 @@ export default function Navbar() {
             <ul className="flex flex-col gap-1 p-4">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.href);
-                    }}
                     className="block rounded-xl px-4 py-3 text-[15px] font-medium text-text-primary hover:bg-stone-100"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="pt-2">
