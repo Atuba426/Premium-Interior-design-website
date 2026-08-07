@@ -15,7 +15,7 @@ export default function FeaturedProjects() {
             title="Featured Projects"
             description="A selection of homes we've designed and built across Mumbai, Thane, and Alibaug — each one shaped around how its owners actually live."
           />
-          <Button href="#projects" variant="secondary" icon={ArrowRight} className="hidden shrink-0 sm:inline-flex">
+          <Button href="/projects" variant="secondary" icon={ArrowRight} className="hidden shrink-0 sm:inline-flex">
             All Projects
           </Button>
         </div>

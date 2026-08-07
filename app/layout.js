@@ -1,8 +1,8 @@
 import "./globals.css";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import FloatingWhatsApp from "@/components/ui/FloatingWhatsapp";
+
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer"
+import FloatingWhatsApp from "../components/ui/FloatingWhatsapp";
 
 export const metadata = {
   metadataBase: new URL("https://www.interiodesignstudio.com"),
@@ -55,12 +55,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <FloatingWhatsApp />
-        </ThemeProvider>
+        <Navbar />
+        <main>{children}</main>
+        <Footer/>
+        <FloatingWhatsApp />
       </body>
     </html>
   );

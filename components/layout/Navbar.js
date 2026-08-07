@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Button from "@/components/ui/Button";
-import ThemeToggle from "@/components/ui/ThemeToggle";
-import { NAV_LINKS } from "@/lib/utils";
+import Button from "../ui/Button";
+
+import { NAV_LINKS } from "../../lib/utils";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +40,7 @@ export default function Navbar() {
         }`}
       >
         <Link
-          href="#home"
+          href="/"
           className="font-heading text-[19px] font-semibold tracking-tight text-text"
         >
           Interio<span className="text-amber-500">.</span>
@@ -53,10 +53,10 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`rounded-full px-4 py-2 text-[14.5px] font-medium transition-colors hover:bg-black/5 ${
+                  className={`rounded-full px-4 py-2 text-[17.5px] font-medium transition-colors hover:bg-black/5 ${
                     active
                       ? "text-amber-500 font-semibold"
-                      : "text-text-primary/80 hover:text-text-primary"
+                      : "text-text-primary/50 font-extrabold hover:text-text-primary"
                   }`}
                 >
                   {link.label}
@@ -68,9 +68,9 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-3 lg:flex">
-          <ThemeToggle />
+         
           <Button
-            href="#contact"
+            href="/contact"
             className="px-5! py-2.5! text-[14.5px]! font-medium bg-[#de9b36] hover:bg-gray-950 text-stone-900 shadow-sm hover:text-white transition-all duration-300 rounded-full border-none"
           >
             Book Consultation
@@ -79,7 +79,7 @@ export default function Navbar() {
 
         {/* Mobile Actions */}
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
+         
           <button
             className="flex h-9 w-9 items-center justify-center rounded-full text-text-primary"
             onClick={() => setOpen((o) => !o)}
@@ -113,7 +113,7 @@ export default function Navbar() {
               ))}
               <li className="pt-2">
                 <Button
-                  href="#contact"
+                  href="/contact"
                   className="px-5! py-2.5! text-[14.5px]! font-medium bg-[#d4a359] hover:bg-[#c29247] text-stone-900 shadow-sm transition-all duration-300 rounded-full border-none"
                   onClick={() => setOpen(false)}
                 >

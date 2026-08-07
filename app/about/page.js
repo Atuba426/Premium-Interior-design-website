@@ -3,7 +3,6 @@ import PageHero from "@/components/shared/PageHero";
 import Container from "@/components/shared/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TeamCard from "@/components/cards/TeamCard";
-import TrustNumbers from "@/components/sections/TrustNumbers";
 import HowWeWork from "@/components/sections/HowWeWork";
 import CTASection from "@/components/sections/CTASection";
 import { aboutStory, teamMembers } from "@/data/team";
@@ -19,7 +18,7 @@ export default function AboutPage() {
     <>
       <PageHero eyebrow="About Us" title="About Interio Design Studio" />
 
-      <section className="pb-24 lg:pb-32">
+      <section className="pb-14 lg:pb-12">
         <Container>
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-card card-shadow-lg">
@@ -52,7 +51,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <TrustNumbers />
+     
 
       <section className="py-24 lg:py-32">
         <Container>

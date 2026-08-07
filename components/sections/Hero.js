@@ -78,13 +78,13 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-4 pt-1"
             >
               <Button
-                href="#contact"
+                href="/contact"
                 className="px-5! py-2.5! text-[14.5px]! font-medium bg-[#de9b36] hover:bg-gray-950 text-stone-900 shadow-sm hover:text-white transition-all duration-300 rounded-full border-none"
                 icon={ArrowRight}
               >
                 Book Consultation
               </Button>
-              <Button href="#projects" variant="secondary" icon={PlayCircle}>
+              <Button href="/projects" variant="secondary" icon={PlayCircle}>
                 View Projects
               </Button>
             </motion.div>

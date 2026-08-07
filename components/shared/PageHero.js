@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 
 export default function PageHero({ eyebrow, title, description }) {
   return (
-    <section className="pt-40 pb-16 lg:pt-48 lg:pb-20">
+    <section className="pt-10 pb-16 lg:pt-30 lg:pb-5">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}

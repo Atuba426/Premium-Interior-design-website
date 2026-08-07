@@ -2,7 +2,7 @@
 
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { STUDIO } from "@/lib/utils";
+import { STUDIO } from "../../lib/utils";
 
 export default function FloatingWhatsApp() {
   const message = encodeURIComponent(

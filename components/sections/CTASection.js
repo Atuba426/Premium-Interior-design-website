@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, ArrowRight } from "lucide-react";
-import Container from "@/components/shared/Container";
-import Button from "@/components/ui/Button";
-import { STUDIO } from "@/lib/utils";
+import Container from "../../components/shared/Container";
+import Button from "../../components/ui/Button"
+import  {STUDIO} from "../../lib/utils"
 
 export default function CTASection() {
   return (
@@ -33,7 +33,7 @@ export default function CTASection() {
           </p>
 
           <div className="relative mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button href="#" variant="accent" icon={ArrowRight}>
+            <Button href="/contact" variant="accent" icon={ArrowRight}>
               Book Consultation
             </Button>
             <a

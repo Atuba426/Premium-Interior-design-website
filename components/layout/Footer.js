@@ -2,22 +2,22 @@
 
 import { useState } from "react";
 import { Instagram, Facebook, Linkedin, ArrowRight, MapPin, Phone, Mail } from "lucide-react";
-import Container from "@/components/shared/Container";
-import { STUDIO } from "@/lib/utils";
+import Container from "../../components/shared/Container";
+import { STUDIO } from "../../lib/utils"
 
 const quickLinks = [
   { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#how-we-work" },
-  { label: "Reviews", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const serviceLinks = [
-  { label: "Modular Kitchens", href: "#included" },
+  { label: "Modular Kitchens", href: "/services" },
   { label: "Full Home Interiors", href: "#pricing" },
-  { label: "Villa Design", href: "#explore" },
-  { label: "3D Visualization", href: "#why-us" },
+  { label: "Villa Design", href: "/projects" },
+  { label: "3D Visualization", href: "#HowWeWork" },
 ];
 
 export default function Footer() {
@@ -32,14 +32,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#111111] pt-20 text-[#F8F5F1]">
+    <footer className="bg-footer pt-20 text-footer-text">
       <Container>
         <div className="grid grid-cols-1 gap-12 pb-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
-            <span className="font-[family-name:var(--font-heading)] text-[22px] font-semibold">
-              Interio<span className="text-[#B68D40]">.</span>
+            <span className="font-heading text-[22px] font-semibold">
+              Interio<span className="text-accent">.</span>
             </span>
-            <p className="max-w-xs text-[15px] leading-relaxed text-[#F8F5F1]/60">
+            <p className="max-w-xs text-[15px] leading-relaxed text-footer-text/60">
               Warm, high-craft interiors for homes across Mumbai — designed
               around how you actually live.
             </p>
@@ -49,7 +49,7 @@ export default function Footer() {
                   key={i}
                   href="#"
                   aria-label="Social link"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[#F8F5F1]/70 transition-colors hover:border-[#B68D40] hover:text-[#B68D40]"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-footer-text/70 transition-colors hover:border-accent hover:text-accent"
                 >
                   <Icon size={16} />
                 </a>
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-[14px] font-semibold uppercase tracking-[0.14em] text-[#F8F5F1]/50">
+            <h4 className="mb-5 text-[14px] font-semibold uppercase tracking-[0.14em] text-footer-text/50">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-3">
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[15px] text-[#F8F5F1]/75 transition-colors hover:text-[#B68D40]"
+                    className="text-[15px] text-footer-text/75 transition-colors hover:text-accent"
                   >
                     {link.label}
                   </a>
@@ -76,7 +76,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-[14px] font-semibold uppercase tracking-[0.14em] text-[#F8F5F1]/50">
+            <h4 className="mb-5 text-[14px] font-semibold uppercase tracking-[0.14em] text-footer-text/50">
               Services
             </h4>
             <ul className="flex flex-col gap-3">
@@ -84,7 +84,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[15px] text-[#F8F5F1]/75 transition-colors hover:text-[#B68D40]"
+                    className="text-[15px] text-footer-text/75 transition-colors hover:text-accent"
                   >
                     {link.label}
                   </a>
@@ -94,10 +94,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-[14px] font-semibold uppercase tracking-[0.14em] text-[#F8F5F1]/50">
+            <h4 className="mb-5 text-[14px] font-semibold uppercase tracking-[0.14em] text-footer-text/50">
               Stay Updated
             </h4>
-            <p className="mb-4 text-[15px] text-[#F8F5F1]/60">
+            <p className="mb-4 text-[15px] text-footer-text/60">
               Studio notes and finished projects, once a month.
             </p>
             <form onSubmit={handleSubmit} className="flex items-center gap-2">
@@ -107,39 +107,39 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="w-full rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-[14px] text-[#F8F5F1] placeholder:text-[#F8F5F1]/40 outline-none focus:border-[#B68D40]"
+                className="w-full rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-[14px] text-footer-text placeholder:text-footer-text/40 outline-none focus:border-accent"
               />
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#B68D40] text-white transition-colors hover:bg-[#A37A2F]"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-colors hover:bg-accent-hover"
               >
                 <ArrowRight size={16} />
               </button>
             </form>
             {submitted && (
-              <p className="mt-3 text-[13px] text-[#B68D40]">Thanks — you're on the list.</p>
+              <p className="mt-3 text-[13px] text-accent">Thanks — you're on the list.</p>
             )}
 
-            <div className="mt-6 flex flex-col gap-3 text-[14px] text-[#F8F5F1]/60">
-              <span className="flex items-center gap-2">
-                <MapPin size={14} className="shrink-0 text-[#B68D40]" /> {STUDIO.address}
+            <div className="mt-6 flex flex-col gap-3 text-[14px] text-footer-text/60">
+              <span className="flex items-center gap-2 cursor-pointer">
+                <MapPin size={14} className="shrink-0 text-accent " /> {STUDIO.address}
               </span>
-              <span className="flex items-center gap-2">
-                <Phone size={14} className="shrink-0 text-[#B68D40]" /> {STUDIO.phone}
+              <span className="flex items-center gap-2 cursor-pointer">
+                <Phone size={14} className="shrink-0 text-accent" /> {STUDIO.phone}
               </span>
-              <span className="flex items-center gap-2">
-                <Mail size={14} className="shrink-0 text-[#B68D40]" /> {STUDIO.email}
+              <span className="flex items-center gap-2 cursor-pointer">
+                <Mail size={14} className="shrink-0 text-accent " /> {STUDIO.email}
               </span>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-[13px] text-[#F8F5F1]/45 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-[13px] text-footer-text/45 sm:flex-row">
           <span>© {new Date().getFullYear()} Interio Design Studio. All rights reserved.</span>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-[#F8F5F1]/80">Privacy Policy</a>
-            <a href="#" className="hover:text-[#F8F5F1]/80">Terms of Service</a>
+            <a href="#" className="hover:text-footer-text/80">Privacy Policy</a>
+            <a href="#" className="hover:text-footer-text/80">Terms of Service</a>
           </div>
         </div>
       </Container>
